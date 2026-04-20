@@ -1,7 +1,7 @@
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
-import { getSettings, getServices, getRates, getFaqs, getSection } from '@/lib/db'
+import { getSettings, getServices, getRates, getFaqs, getSection, getPosts } from '@/lib/db'
 import Navbar from '@/components/layout/Navbar'
 import Hero from '@/components/sections/Hero'
 import About from '@/components/sections/About'
@@ -13,6 +13,7 @@ import FAQ from '@/components/sections/FAQ'
 import Reviews from '@/components/sections/Reviews'
 import Contact from '@/components/sections/Contact'
 import Footer from '@/components/layout/Footer'
+import RecentReports from '@/components/sections/RecentReports'
 import FloatingCallButton from '@/components/layout/FloatingCallButton'
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
   const aboutSection = getSection('about')
   const catskillSection = getSection('catskill_fly_fishing')
   const beforeYouFishSection = getSection('before_you_fish')
+  const recentPosts = getPosts(undefined, true)
 
   return (
     <main className="relative">
@@ -39,6 +41,7 @@ export default function Home() {
       <BeforeYouFish section={beforeYouFishSection || null} />
       <FAQ faqs={faqs} />
       <Reviews />
+      <RecentReports posts={recentPosts} />
       <Contact settings={settings} />
       <Footer settings={settings} />
       <FloatingCallButton />
