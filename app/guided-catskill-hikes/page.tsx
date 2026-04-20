@@ -1,4 +1,8 @@
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 import type { Metadata } from 'next'
+import { getSection, getSettings } from '@/lib/db'
 import PageContent from './content'
 
 export const metadata: Metadata = {
@@ -8,15 +12,16 @@ export const metadata: Metadata = {
   keywords: [
     'guided Catskill hikes', 'Catskill Mountains hiking guide', 'Catskill High Peaks',
     'Slide Mountain hiking', 'Peekamoose Mountain', 'Burroughs Range hiking',
-    'Catskill 3500 Club', 'guided hiking New York', 'Catskill trail guide',
   ],
   openGraph: {
     title: 'Guided Catskill Hikes | Ashokan Outdoors',
-    description: 'Explore the breathtaking Catskill High Peaks with certified local guides.',
+    description: 'Summit breathtaking Catskill peaks with certified guides. Half and full day hikes available.',
     url: 'https://ashokan2.advancedmarketing.co/guided-catskill-hikes',
   },
 }
 
 export default function Page() {
-  return <PageContent />
+  const section = getSection('page_guided_hikes')
+  const settings = getSettings()
+  return <PageContent section={section || null} settings={settings} />
 }

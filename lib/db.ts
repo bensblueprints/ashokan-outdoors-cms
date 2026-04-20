@@ -186,6 +186,38 @@ Whether you're a seasoned angler or a complete beginner, the thrill of watching 
     null,
     null,
   ],
+  [
+    'page_fly_fishing_guiding',
+    'page_fly_fishing_guiding',
+    'Guided Fly Fishing in the Catskills',
+    'Fish legendary Catskill streams with expert local guides who\'ve spent three decades mastering these waters.',
+    `Experience the thrill of fly fishing on the legendary rivers and streams of the Catskills. Our expert guides will help you discover and navigate these pristine waters, ensuring you safely make the most of your fishing adventure. We provide all rods, reels, and flies you will need to catch a trout on a fly. Join us for an unforgettable day on the water, surrounded by breathtaking scenery.
+
+The Catskill region of New York's Hudson Valley is often called the "Birthplace of American Fly Fishing," a title earned through its pristine waters, rich history, and legendary anglers. Some of the most famous trout streams in the country flow through these mountains, including the Beaverkill, Willowemoc, Esopus Creek, and Neversink River — all known for their wild and stocked trout populations.
+
+The Catskills' cold, oxygen-rich waters support thriving populations of brook, brown, and rainbow trout, providing anglers with the opportunity to test their skills against fish that are as cunning as they are beautiful.`,
+    '/images/fly-fishing-guide.jpg',
+  ],
+  [
+    'page_fly_fishing_instruction',
+    'page_fly_fishing_instruction',
+    'Catskills Fly Fishing Instruction',
+    'Learn to fly fish in the birthplace of American fly fishing with licensed Catskill Mountain guides.',
+    `Whether you are looking to refine your fly fishing skills or if you are just starting out — our knowledgeable fly fishing instructors will help you enhance your proficiency. When you are ready, we can take your new skills to the Catskill waters. We promise an unforgettable experience. Join us and confidently embark on your next fly fishing journey.
+
+Learn and/or develop your fly casting skills on land with an Ashokan Outdoors Licensed Instructor. Our Guides will teach you about different fly rods, reels, lines, and how to use each of them. You can learn the basics or enhance your current skills. This instruction is conducted without hooks on open lawn so we can get a little crazy.`,
+    '/images/hiking.jpg',
+  ],
+  [
+    'page_guided_hikes',
+    'page_guided_hikes',
+    'Guided Catskill Hikes',
+    'Summit breathtaking Catskill peaks with certified guides who know every trail and ridge.',
+    `Discover the breathtaking beauty of the Catskill High Peaks, or opt for a more manageable hiking experience tailored to your preferences. Our trained and certified hiking guides prioritize your safety and preparation to ensure a worry-free adventure. Join us for an unforgettable journey where you can immerse yourself into the great Catskill outdoors.
+
+Ashokan Outdoors is perfectly situated at the foot of the Burroughs Range — a series of mountains and trails that hold some of the best hiking and nature one can experience in the Catskills. Whether you want to summit a 3,500-foot Catskill Peak or take a more leisurely hike, our guides know great trails and would be happy to help you choose a suitable hike, prepare your route, and prioritize safety.`,
+    '/images/hiking.jpg',
+  ],
 ]
 
 const seedSections = db.transaction(() => {

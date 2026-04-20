@@ -1,4 +1,8 @@
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 import type { Metadata } from 'next'
+import { getSection, getSettings } from '@/lib/db'
 import PageContent from './content'
 
 export const metadata: Metadata = {
@@ -18,5 +22,7 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <PageContent />
+  const section = getSection('page_fly_fishing_guiding')
+  const settings = getSettings()
+  return <PageContent section={section || null} settings={settings} />
 }

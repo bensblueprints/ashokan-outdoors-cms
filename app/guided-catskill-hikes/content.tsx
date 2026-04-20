@@ -3,9 +3,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowLeft, ArrowRight, CheckCircle, Mountain, MapPin, Clock, Users, Shield, TreePine } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle, Mountain, Users, Shield, TreePine } from 'lucide-react'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+
+interface Section {
+  title: string
+  subtitle: string | null
+  body: string | null
+  image: string | null
+}
 
 const peaks = [
   { name: 'Slide Mountain', elevation: "4,190'", desc: 'Highest peak in the Catskills. Spectacular views of the Hudson Valley.' },
@@ -16,15 +23,22 @@ const peaks = [
   { name: 'Ashokan High Point', elevation: "3,080'", desc: 'Panoramic Reservoir views. Plane wreck site on trail.' },
 ]
 
-export default function PageContent() {
+export default function PageContent({ section, settings }: { section: Section | null; settings: Record<string, string> }) {
+  const title = section?.title || 'Guided Catskill Hikes'
+  const subtitle = section?.subtitle || 'Summit breathtaking Catskill peaks with certified guides who know every trail and ridge.'
+  const heroImage = section?.image || '/images/hiking.jpg'
+  const bodyParagraphs = section?.body?.split('\n\n').filter(Boolean) || [
+    'Discover the breathtaking beauty of the Catskill High Peaks.',
+  ]
+
   return (
     <main>
-      <Navbar />
+      <Navbar settings={settings} />
 
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/hiking.jpg" alt="Guided hiking in the Catskill Mountains" fill className="object-cover" priority quality={90} sizes="100vw" />
+          <Image src={heroImage} alt={title} fill className="object-cover" priority quality={90} sizes="100vw" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/50 to-forest-950/30" />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-32 w-full">
@@ -35,7 +49,7 @@ export default function PageContent() {
             Guided Catskill <span className="gradient-text">Hikes</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }} className="font-body text-lg sm:text-xl text-stone-300 max-w-2xl">
-            Summit breathtaking Catskill peaks with certified guides who know every trail and ridge.
+            {subtitle}
           </motion.p>
         </div>
       </section>
@@ -48,12 +62,9 @@ export default function PageContent() {
             <div className="lg:col-span-2 space-y-8">
               <div>
                 <h2 className="font-display text-3xl text-white mb-6">Explore the Catskill High Peaks</h2>
-                <p className="font-body text-stone-300 text-lg leading-relaxed mb-6">
-                  Discover the breathtaking beauty of the Catskill High Peaks, or opt for a more manageable hiking experience tailored to your preferences. Our trained and certified hiking guides prioritize your safety and preparation to ensure a worry-free adventure. Join us for an unforgettable journey where you can immerse yourself into the great Catskill outdoors.
-                </p>
-                <p className="font-body text-stone-300 text-lg leading-relaxed mb-6">
-                  Ashokan Outdoors is perfectly situated at the foot of the Burroughs Range — a series of mountains and trails that hold some of the best hiking and nature one can experience in the Catskills. Whether you want to summit a 3,500-foot Catskill Peak or take a more leisurely hike, our guides know great trails and would be happy to help you choose a suitable hike, prepare your route, and prioritize safety.
-                </p>
+                {bodyParagraphs.map((p, i) => (
+                  <p key={i} className="font-body text-stone-300 text-lg leading-relaxed mb-6">{p}</p>
+                ))}
               </div>
 
               {/* Peaks Grid */}
@@ -132,14 +143,9 @@ export default function PageContent() {
                 <h3 className="font-display text-2xl text-white mb-4">What to Bring</h3>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
-                    'Sturdy hiking boots/shoes',
-                    'Layered clothing (weather changes fast)',
-                    'Rain jacket',
-                    'Water bottle',
-                    'Sunscreen & insect repellent',
-                    'Hat with brim',
-                    'Snacks/energy bars',
-                    'Waterproof phone case',
+                    'Sturdy hiking boots/shoes', 'Layered clothing (weather changes fast)',
+                    'Rain jacket', 'Water bottle', 'Sunscreen & insect repellent',
+                    'Hat with brim', 'Snacks/energy bars', 'Waterproof phone case',
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-forest-400 flex-shrink-0" />
@@ -162,62 +168,40 @@ export default function PageContent() {
               <div className="glass rounded-2xl p-8 sticky top-24">
                 <div className="h-1 w-full bg-amber-500 rounded-full -mt-8 mb-6 mx-[-2rem] w-[calc(100%+4rem)]" />
                 <h3 className="font-display text-2xl text-white mb-6">Hiking Rates</h3>
-
                 <div className="space-y-4 mb-6">
-                  <div className="flex items-center gap-3 text-stone-300">
-                    <Users className="w-5 h-5 text-amber-400" />
-                    <span className="font-body">Small Group (4 or less)</span>
-                  </div>
+                  <div className="flex items-center gap-3 text-stone-300"><Users className="w-5 h-5 text-amber-400" /><span className="font-body">Small Group (4 or less)</span></div>
                 </div>
-
                 <div className="border-t border-white/10 pt-4 space-y-4 mb-6">
                   <div className="flex justify-between items-center py-2">
-                    <div>
-                      <span className="font-body text-stone-300">Half Day</span>
-                      <span className="block text-xs text-stone-500">~4 hours</span>
-                    </div>
+                    <div><span className="font-body text-stone-300">Half Day</span><span className="block text-xs text-stone-500">~4 hours</span></div>
                     <span className="font-display text-2xl text-white">$250</span>
                   </div>
                   <div className="flex justify-between items-center py-2 border-t border-white/5">
-                    <div>
-                      <span className="font-body text-stone-300">Full Day</span>
-                      <span className="block text-xs text-stone-500">~8 hours</span>
-                    </div>
+                    <div><span className="font-body text-stone-300">Full Day</span><span className="block text-xs text-stone-500">~8 hours</span></div>
                     <span className="font-display text-2xl text-white">$400</span>
                   </div>
                 </div>
-
-                <p className="font-body text-xs text-stone-500 italic mb-6">
-                  Custom group rates with additional guides available upon request.
-                </p>
-
+                <p className="font-body text-xs text-stone-500 italic mb-6">Custom group rates with additional guides available upon request.</p>
                 <a href="/#contact" className="btn-gold w-full flex items-center justify-center gap-2">
                   <span className="relative z-10">Book a Hike</span>
                   <ArrowRight className="w-4 h-4 relative z-10" />
                 </a>
-
-                <p className="font-body text-xs text-stone-500 mt-4 text-center">
-                  20% deposit required. Balance due day of trip.
-                </p>
-
+                <p className="font-body text-xs text-stone-500 mt-4 text-center">20% deposit required. Balance due day of trip.</p>
                 <div className="border-t border-white/10 mt-6 pt-4">
-                  <p className="font-body text-stone-400 text-xs text-center">
-                    Personalized gift certificates available for full and half day trips or for a specified amount.
-                  </p>
+                  <p className="font-body text-stone-400 text-xs text-center">Personalized gift certificates available for full and half day trips or for a specified amount.</p>
                 </div>
               </div>
-
               <div className="glass rounded-2xl p-6">
                 <h4 className="font-body font-semibold text-white mb-3">Questions?</h4>
-                <a href="tel:+19172329951" className="block font-body text-creek-400 hover:text-creek-300 text-sm mb-1 transition-colors">(917) 232-9951</a>
-                <a href="mailto:ashokanoutdoors@gmail.com" className="block font-body text-creek-400 hover:text-creek-300 text-sm transition-colors">ashokanoutdoors@gmail.com</a>
+                <a href={`tel:+1${(settings.phone || '9172329951').replace(/\D/g, '')}`} className="block font-body text-creek-400 hover:text-creek-300 text-sm mb-1 transition-colors">{settings.phone || '(917) 232-9951'}</a>
+                <a href={`mailto:${settings.email || 'ashokanoutdoors@gmail.com'}`} className="block font-body text-creek-400 hover:text-creek-300 text-sm transition-colors">{settings.email || 'ashokanoutdoors@gmail.com'}</a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
+      <Footer settings={settings} />
     </main>
   )
 }

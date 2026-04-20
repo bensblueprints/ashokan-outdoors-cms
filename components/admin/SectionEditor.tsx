@@ -19,6 +19,9 @@ const SECTION_LABELS: Record<string, string> = {
   about: 'About Section',
   catskill_fly_fishing: 'Catskill Fly Fishing',
   before_you_fish: 'Before You Fish',
+  page_fly_fishing_guiding: 'Page: Fly Fishing Guiding',
+  page_fly_fishing_instruction: 'Page: Fly Fishing Instruction',
+  page_guided_hikes: 'Page: Guided Catskill Hikes',
 }
 
 export default function SectionEditor() {
