@@ -166,9 +166,17 @@ export default function Footer({ settings = {} }: FooterProps) {
 
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-body text-stone-500 text-sm">
-            &copy; {new Date().getFullYear()} {siteName}. All rights reserved.
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="font-body text-stone-500 text-sm">
+              &copy; {new Date().getFullYear()} {siteName}. All rights reserved.
+            </p>
+            <a
+              href="/admin"
+              className="font-body text-stone-600 hover:text-stone-400 text-xs transition-colors"
+            >
+              Admin
+            </a>
+          </div>
 
           <button
             onClick={scrollToTop}

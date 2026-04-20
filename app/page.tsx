@@ -7,6 +7,7 @@ import Rates from '@/components/sections/Rates'
 import CatskillFlyFishing from '@/components/sections/CatskillFlyFishing'
 import BeforeYouFish from '@/components/sections/BeforeYouFish'
 import FAQ from '@/components/sections/FAQ'
+import Reviews from '@/components/sections/Reviews'
 import Contact from '@/components/sections/Contact'
 import Footer from '@/components/layout/Footer'
 import FloatingCallButton from '@/components/layout/FloatingCallButton'
@@ -34,6 +35,7 @@ export default function Home() {
       <CatskillFlyFishing section={catskillSection || null} />
       <BeforeYouFish section={beforeYouFishSection || null} />
       <FAQ faqs={faqs} />
+      <Reviews />
       <Contact settings={settings} />
       <Footer settings={settings} />
       <FloatingCallButton />
