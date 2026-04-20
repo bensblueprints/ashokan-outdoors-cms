@@ -1,3 +1,6 @@
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 import { getSettings, getServices, getRates, getFaqs, getSection } from '@/lib/db'
 import Navbar from '@/components/layout/Navbar'
 import Hero from '@/components/sections/Hero'

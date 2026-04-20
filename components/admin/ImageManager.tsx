@@ -92,10 +92,21 @@ export default function ImageManager() {
   }
 
   async function deleteImage(id: string) {
-    // Note: there's no delete image API endpoint currently,
-    // so we just remove from the local list
-    // If a DELETE endpoint exists, we'd call it here
-    addToast('Image removal not yet supported by API', 'error')
+    try {
+      const res = await fetch(`/api/images/${id}`, {
+        method: 'DELETE',
+        headers: { 'x-admin-password': getPassword() },
+      })
+      if (res.ok) {
+        setImages((prev) => prev.filter((img) => img.id !== id))
+        addToast('Image deleted', 'success')
+      } else {
+        const err = await res.json()
+        addToast(`Failed to delete: ${err.error}`, 'error')
+      }
+    } catch {
+      addToast('Failed to delete image', 'error')
+    }
     setDeleteConfirm(null)
   }
 
