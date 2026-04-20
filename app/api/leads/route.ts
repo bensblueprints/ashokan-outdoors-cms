@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
 import { v4 as uuid } from 'uuid'
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend'
 
 async function sendNotification(lead: {
   name: string
@@ -12,24 +12,16 @@ async function sendNotification(lead: {
   preferred_date: string | null
   message: string | null
 }) {
-  const smtpHost = process.env.SMTP_HOST
-  const smtpPort = process.env.SMTP_PORT
-  const smtpUser = process.env.SMTP_USER
-  const smtpPass = process.env.SMTP_PASS
+  const apiKey = process.env.RESEND_API_KEY
   const notifyEmail = process.env.NOTIFY_EMAIL
 
-  if (!smtpHost || !smtpUser || !smtpPass || !notifyEmail) return
+  if (!apiKey || !notifyEmail) return
 
   try {
-    const transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: parseInt(smtpPort || '587'),
-      secure: smtpPort === '465',
-      auth: { user: smtpUser, pass: smtpPass },
-    })
+    const resend = new Resend(apiKey)
 
-    await transporter.sendMail({
-      from: `"Ashokan Outdoors Website" <${smtpUser}>`,
+    await resend.emails.send({
+      from: 'Ashokan Outdoors <onboarding@resend.dev>',
       to: notifyEmail,
       subject: `New Booking Request from ${lead.name}`,
       html: `
