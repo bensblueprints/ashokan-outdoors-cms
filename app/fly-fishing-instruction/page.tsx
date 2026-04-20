@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Catskills Fly Fishing Instruction | Ashokan Outdoors',
     description: 'Learn to fly fish in the birthplace of American fly fishing. Expert instruction in the Catskill Mountains.',
-    url: 'https://ashokan.advancedmarketing.co/fly-fishing-instruction',
+    url: 'https://ashokan2.advancedmarketing.co/fly-fishing-instruction',
   },
 }
 

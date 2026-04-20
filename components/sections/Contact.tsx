@@ -95,7 +95,7 @@ export default function Contact({ settings }: ContactProps) {
   }
 
   return (
-    <section id="contact" className="section-padding relative overflow-hidden">
+    <section id="contact" aria-label="Contact and Booking Form" className="section-padding relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-creek-400/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-forest-500/5 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />

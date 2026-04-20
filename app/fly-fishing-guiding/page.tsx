@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Guided Fly Fishing in the Catskills | Ashokan Outdoors',
     description: 'Fish legendary Catskill waters with expert local guides. Half and full day trips available.',
-    url: 'https://ashokan.advancedmarketing.co/fly-fishing-guiding',
+    url: 'https://ashokan2.advancedmarketing.co/fly-fishing-guiding',
   },
 }
 

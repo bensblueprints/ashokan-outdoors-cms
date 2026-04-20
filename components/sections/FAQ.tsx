@@ -79,7 +79,7 @@ function FAQItem({ faq, index }: { faq: FaqData; index: number }) {
 
 export default function FAQ({ faqs }: FAQProps) {
   return (
-    <section id="faq" className="section-padding relative overflow-hidden">
+    <section id="faq" aria-label="Frequently Asked Questions" className="section-padding relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-forest-500/5 rounded-full blur-[120px] pointer-events-none" />
 

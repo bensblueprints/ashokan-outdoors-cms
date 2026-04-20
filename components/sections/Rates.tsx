@@ -76,6 +76,7 @@ export default function Rates({ rates }: RatesProps) {
     <section
       id="rates"
       ref={sectionRef}
+      aria-label="Service Rates and Pricing"
       className="relative py-24 sm:py-32 bg-forest-950 overflow-hidden"
     >
       {/* Background texture */}

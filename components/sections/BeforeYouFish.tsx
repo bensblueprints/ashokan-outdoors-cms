@@ -78,7 +78,7 @@ export default function BeforeYouFish({ section }: BeforeYouFishProps) {
   const title = section?.title || 'Before You Go Fly Fishing'
   const subtitle = section?.subtitle || 'Preparation Guide'
   return (
-    <section id="prepare" className="section-padding relative overflow-hidden">
+    <section id="prepare" aria-label="Preparation Guide - Before You Go Fly Fishing" className="section-padding relative overflow-hidden">
       {/* Subtle background accent */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-forest-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 

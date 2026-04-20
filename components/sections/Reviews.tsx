@@ -60,7 +60,7 @@ function StarRating() {
 
 export default function Reviews() {
   return (
-    <section id="reviews" className="relative py-24 md:py-32 overflow-hidden bg-forest-950">
+    <section id="reviews" aria-label="Client Reviews and Testimonials" className="relative py-24 md:py-32 overflow-hidden bg-forest-950">
       {/* Top rule */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
 

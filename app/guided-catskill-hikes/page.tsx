@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Guided Catskill Hikes | Ashokan Outdoors',
     description: 'Explore the breathtaking Catskill High Peaks with certified local guides.',
-    url: 'https://ashokan.advancedmarketing.co/guided-catskill-hikes',
+    url: 'https://ashokan2.advancedmarketing.co/guided-catskill-hikes',
   },
 }
 
