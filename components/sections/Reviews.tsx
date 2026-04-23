@@ -11,6 +11,11 @@ const reviews = [
     text: "John approaches perfection when it comes to creating a unique Catskill experience for his clients. He loves everything fly fishing and Catskill Mountains and it was apparent from the minute I met him. He can't guarantee biting fish or perfect weather, but you can count on an exceptional experience to remember!",
   },
   {
+    name: 'David H.',
+    date: 'October 2025',
+    text: "John is a fabulous guide, incredible fly fishing knowledge and best of all, a great person, who loves the outdoors, who not only when fishing is teaching but also making you aware of what is happening in the surroundings. I really enjoyed my time with him — I highly recommend his services.",
+  },
+  {
     name: 'Brian Roesch',
     date: 'October 2025',
     text: "In October 2025, John gave expert guide service to our 2-person party on day-long fishing in Catskills. For our 1st time fly fisher, he gave solid instruction on casting. By mid-morning, her good casts were getting hits from fish. By the end of the day, she was making excellent casts. For me, with lots of prior fly casting, I appreciated John guiding us into beautiful spots with good fish & fun, intriguing water to cast in. My highest recommendation for Ashokan Outdoors fly fishing.",
