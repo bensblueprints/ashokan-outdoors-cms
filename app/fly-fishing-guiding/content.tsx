@@ -51,8 +51,8 @@ export default function PageContent({ section, settings }: { section: Section | 
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </Link>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-4">
-            {title.includes('Catskills') ? (
-              <>{title.split('Catskills')[0]}<span className="gradient-text">in the Catskills</span></>
+            {title.includes('in the Catskills') ? (
+              <>{title.split('in the Catskills')[0]}<span className="gradient-text">in the Catskills</span></>
             ) : title}
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }} className="font-body text-lg sm:text-xl text-stone-300 max-w-2xl">

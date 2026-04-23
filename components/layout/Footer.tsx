@@ -57,7 +57,7 @@ export default function Footer({ settings = {} }: FooterProps) {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
           {/* Col 1: Logo + Tagline */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <h3 className="font-display text-2xl text-white mb-4">
+            <h3 className="font-brand font-bold text-2xl text-white uppercase tracking-[0.15em] mb-4">
               {siteName.split(' ')[0]}{' '}
               <span className="text-forest-400">{siteName.split(' ').slice(1).join(' ')}</span>
             </h3>

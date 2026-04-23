@@ -138,7 +138,7 @@ export default function Hero({ title, subtitle }: HeroProps) {
         </motion.div>
 
         {/* Headline Line 1 */}
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
           <span className="block mb-1 md:mb-2">
             {headline1Words.map((word, i) => (
               <motion.span
@@ -150,7 +150,7 @@ export default function Hero({ title, subtitle }: HeroProps) {
                   delay: 0.4 + i * 0.08,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className="inline-block mr-[0.25em] text-stone-50"
+                className="inline-block mr-[0.25em] text-white"
               >
                 {word}
               </motion.span>
@@ -182,7 +182,7 @@ export default function Hero({ title, subtitle }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.1 }}
-          className="mt-6 md:mt-8 max-w-2xl mx-auto text-base sm:text-lg md:text-xl font-body text-stone-300/90 leading-relaxed text-balance"
+          className="mt-6 md:mt-8 max-w-2xl mx-auto text-base sm:text-lg md:text-xl font-body font-semibold text-white leading-relaxed text-balance drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]"
         >
           {subtitle}
         </motion.p>

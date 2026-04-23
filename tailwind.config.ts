@@ -63,6 +63,7 @@ const config: Config = {
       fontFamily: {
         display: ['var(--font-playfair)', 'serif'],
         body: ['var(--font-source)', 'sans-serif'],
+        brand: ['Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
