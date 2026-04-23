@@ -169,7 +169,7 @@ export default function Hero({ title, subtitle }: HeroProps) {
                   delay: 0.7 + i * 0.08,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className="inline-block mr-[0.25em] gradient-text"
+                className="inline-block mr-[0.25em] text-white"
               >
                 {word}
               </motion.span>
