@@ -245,7 +245,7 @@ const servicesData: [string, string, string, string, string, number][] = [
     1,
   ],
   [
-    'Fly Fishing Guiding',
+    'Guided Fly Fishing Trips',
     'Experience the thrill of fly fishing on the legendary rivers and streams of the Catskills. Our expert guides will help you navigate these pristine waters, ensuring you safely make the most of your fishing adventure. We also provide all rods, reels, and flies you will need to catch a trout on a fly. Join us for an unforgettable day on the water, surrounded by breathtaking scenery.',
     '/images/fall-fishing.jpg',
     'Compass',
@@ -255,7 +255,7 @@ const servicesData: [string, string, string, string, string, number][] = [
   [
     'Guided Catskill Hikes',
     'Discover the breathtaking beauty of the Catskill High Peaks, or opt for a more manageable hiking experience tailored to your preferences. Our trained and certified hiking guides prioritize your safety and preparation to ensure a worry-free adventure. Join us for an unforgettable journey where you can immerse yourself into the great Catskill outdoors.',
-    '/images/fly-fishing-guide.jpg',
+    '/images/hiking.jpg',
     'Mountain',
     '/guided-catskill-hikes',
     3,

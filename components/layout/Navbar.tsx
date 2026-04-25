@@ -86,7 +86,7 @@ export default function Navbar({ settings = {} }: NavbarProps) {
         )}
       >
         <nav aria-label="Main navigation" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-20 md:h-24">
             {/* Logo */}
             <motion.a
               href="#hero"
@@ -99,12 +99,12 @@ export default function Navbar({ settings = {} }: NavbarProps) {
               <Image
                 src="/images/logo.png"
                 alt="Ashokan Outdoors"
-                width={50}
-                height={50}
-                className="rounded-full"
+                width={96}
+                height={96}
+                className="rounded-full w-14 h-14 md:w-20 md:h-20 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
                 priority
               />
-              <span className="hidden sm:block font-display text-lg text-stone-100 tracking-wide">
+              <span className="hidden sm:block font-brand text-base md:text-xl font-bold uppercase tracking-[0.18em] text-stone-100">
                 {siteName}
               </span>
             </motion.a>
